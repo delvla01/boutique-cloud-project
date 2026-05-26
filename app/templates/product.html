@@ -8,6 +8,11 @@
       <h1>{{ product.name }}</h1>
       <div class="price">${{ "%.2f"|format(product.priceUsd) }}</div>
       <p>{{ product.description }}</p>
+
+      <form method="POST" action="/cart/add/{{ product.id }}" style="margin: 24px 0;">
+        <button type="submit" class="btn">Add to cart</button>
+      </form>
+
       <p style="color: var(--muted); font-size: 13px; margin-top: 24px;">
         Categories: {{ product.categories | join(', ') }}<br />
         Product ID: <code>{{ product.id }}</code>

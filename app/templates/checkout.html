@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Checkout – Online Boutique{% endblock %}
+{% block content %}
+  <a class="back-link" href="/cart">&larr; Back to cart</a>
+  <h1 style="margin-top:0;">Checkout</h1>
+
+  <p style="color: var(--muted); margin-bottom: 24px;">
+    Review your order below. Click "Place order" to complete checkout.
+    This is a simulated checkout — no payment will be processed.
+  </p>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th style="text-align:center;">Qty</th>
+        <th style="text-align:right;">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in items %}
+        <tr>
+          <td>{{ entry.product.name }}</td>
+          <td style="text-align:center;">{{ entry.quantity }}</td>
+          <td style="text-align:right;">${{ "%.2f"|format(entry.subtotal) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-total">
+    <span class="label">Order total</span>
+    <span class="amount">${{ "%.2f"|format(total) }}</span>
+  </div>
+
+  <form method="POST" action="/checkout/complete" style="text-align: right;">
+    <a href="/cart" class="btn btn-secondary">Edit cart</a>
+    <button type="submit" class="btn">Place order</button>
+  </form>
+{% endblock %}

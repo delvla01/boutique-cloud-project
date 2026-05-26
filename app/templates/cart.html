@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Cart – Online Boutique{% endblock %}
+{% block content %}
+  <h1 style="margin-top:0;">Your cart</h1>
+
+  {% if items %}
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th style="text-align:center;">Quantity</th>
+          <th style="text-align:right;">Price</th>
+          <th style="text-align:right;">Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in items %}
+          <tr>
+            <td>
+              <img src="{{ image_base }}/{{ entry.product.picture }}" alt="{{ entry.product.name }}" />
+              <a href="/product/{{ entry.product.id }}" style="color: var(--ink); text-decoration: none;">
+                {{ entry.product.name }}
+              </a>
+            </td>
+            <td style="text-align:center;">{{ entry.quantity }}</td>
+            <td style="text-align:right;">${{ "%.2f"|format(entry.product.priceUsd) }}</td>
+            <td style="text-align:right;">${{ "%.2f"|format(entry.subtotal) }}</td>
+            <td style="text-align:right;">
+              <form method="POST" action="/cart/remove/{{ entry.product.id }}" class="inline-form">
+                <button type="submit" class="text-link-button">Remove</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="cart-total">
+      <span class="label">Total</span>
+      <span class="amount">${{ "%.2f"|format(total) }}</span>
+    </div>
+
+    <div style="text-align: right;">
+      <a href="/" class="btn btn-secondary">Continue shopping</a>
+      <a href="/checkout" class="btn">Proceed to checkout</a>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <h2>Your cart is empty</h2>
+      <p>Browse the shop and add a few things you like.</p>
+      <a href="/" class="btn" style="margin-top: 16px;">Start shopping</a>
+    </div>
+  {% endif %}
+{% endblock %}
