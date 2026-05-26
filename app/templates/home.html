@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home – Online Boutique{% endblock %}
+{% block content %}
+  <h1 style="margin-top:0;">Shop the collection</h1>
+  <p style="color: var(--muted); margin-bottom: 32px;">
+    A curated selection of everyday essentials and small luxuries.
+  </p>
+  <div class="grid">
+    {% for p in products %}
+      <a class="card" href="/product/{{ p.id }}">
+        <img src="{{ image_base }}/{{ p.picture }}" alt="{{ p.name }}" loading="lazy" />
+        <div class="card-body">
+          <div class="card-name">{{ p.name }}</div>
+          <div class="card-price">${{ "%.2f"|format(p.priceUsd) }}</div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

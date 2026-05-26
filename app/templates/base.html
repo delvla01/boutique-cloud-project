@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Online Boutique{% endblock %}</title>
+  <style>
+    :root {
+      --ink: #2a2a2a;
+      --muted: #6b6b6b;
+      --line: #e6e2da;
+      --accent: #b07e3b;
+      --bg: #faf8f3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .brand {
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    header .brand span { color: var(--accent); }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      background: #efeae0;
+    }
+    .card-body { padding: 14px 16px; }
+    .card-name { font-weight: 500; margin-bottom: 4px; }
+    .card-price { color: var(--muted); font-size: 14px; }
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .product-detail img {
+      width: 100%;
+      border-radius: 6px;
+      background: #efeae0;
+    }
+    .product-detail h1 { margin-top: 0; }
+    .product-detail .price {
+      font-size: 22px;
+      color: var(--accent);
+      margin: 12px 0 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover { color: var(--ink); }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 32px 0;
+    }
+    @media (max-width: 640px) {
+      .product-detail { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">Online <span>Boutique</span></a>
+    <div style="color: var(--muted); font-size: 13px;">CS6620 Cloud Project</div>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer>Deployed on Google Cloud Platform &middot; images served from Cloud Storage</footer>
+</body>
+</html>

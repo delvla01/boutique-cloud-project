@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ product.name }} – Online Boutique{% endblock %}
+{% block content %}
+  <a class="back-link" href="/">&larr; Back to all products</a>
+  <div class="product-detail">
+    <img src="{{ image_base }}/{{ product.picture }}" alt="{{ product.name }}" />
+    <div>
+      <h1>{{ product.name }}</h1>
+      <div class="price">${{ "%.2f"|format(product.priceUsd) }}</div>
+      <p>{{ product.description }}</p>
+      <p style="color: var(--muted); font-size: 13px; margin-top: 24px;">
+        Categories: {{ product.categories | join(', ') }}<br />
+        Product ID: <code>{{ product.id }}</code>
+      </p>
+    </div>
+  </div>
+{% endblock %}

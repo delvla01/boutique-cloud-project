@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": "OLJCESPC7Z",
+      "name": "Sunglasses",
+      "description": "Add a modern touch to your outfits with these sleek aviator sunglasses.",
+      "picture": "sunglasses.jpg",
+      "priceUsd": 19.99,
+      "categories": ["accessories"]
+    },
+    {
+      "id": "66VCHSJNUP",
+      "name": "Tank Top",
+      "description": "Perfectly cropped cotton tank, with a scooped neckline.",
+      "picture": "tank-top.jpg",
+      "priceUsd": 18.99,
+      "categories": ["clothing", "tops"]
+    },
+    {
+      "id": "1YMWWN1N4O",
+      "name": "Watch",
+      "description": "This gold-tone stainless steel watch will work with most of your outfits.",
+      "picture": "watch.jpg",
+      "priceUsd": 109.99,
+      "categories": ["accessories"]
+    },
+    {
+      "id": "L9ECAV7KIM",
+      "name": "Loafers",
+      "description": "A neat addition to your summer wardrobe.",
+      "picture": "loafers.jpg",
+      "priceUsd": 89.99,
+      "categories": ["footwear"]
+    },
+    {
+      "id": "2ZYFJ3GM2N",
+      "name": "Hairdryer",
+      "description": "This lightweight hairdryer has 3 heat and speed settings. It's perfect for travel.",
+      "picture": "hairdryer.jpg",
+      "priceUsd": 24.99,
+      "categories": ["hair", "beauty"]
+    },
+    {
+      "id": "0PUK6V6EV0",
+      "name": "Candle Holder",
+      "description": "This small but intricate candle holder is an excellent gift.",
+      "picture": "candle-holder.jpg",
+      "priceUsd": 18.99,
+      "categories": ["decor", "home"]
+    },
+    {
+      "id": "LS4PSXUNUM",
+      "name": "Salt & Pepper Shakers",
+      "description": "Add some flavor to your kitchen.",
+      "picture": "salt-and-pepper-shakers.jpg",
+      "priceUsd": 18.49,
+      "categories": ["kitchen"]
+    },
+    {
+      "id": "9SIQT8TOJO",
+      "name": "Bamboo Glass Jar",
+      "description": "This bamboo glass jar can hold 57 oz (1.7 l) and is perfect for any kitchen.",
+      "picture": "bamboo-glass-jar.jpg",
+      "priceUsd": 5.49,
+      "categories": ["kitchen"]
+    },
+    {
+      "id": "6E92ZMYYFZ",
+      "name": "Mug",
+      "description": "A simple mug with a mustard interior.",
+      "picture": "mug.jpg",
+      "priceUsd": 8.99,
+      "categories": ["kitchen"]
+    }
+  ]
+}
